@@ -3,12 +3,30 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background:linear-gradient(to left,#F19776,#FF7777)
   }
   
   header, footer {
-    background-color: #f8f9fa;
+    background:linear-gradient(to left,#845241,#8c4342);
     padding: 10px;
     text-align: center;
+
+  }
+  .header-txt{
+    font-size:4.2rem; ;
+    color: #FFD79E;
+    padding: 0%;
+    margin: 0%;
+    text-align: center;
+    -webkit-text-stroke: 1px #C4D3DD;
+
+  }
+  .footer-txt{
+
+    color: #FFD79E;
+    padding: 10px;
+    text-align: center;
+    text-shadow: 5px #C4D3DD;
   }
   
   form {
@@ -35,3 +53,21 @@ body {
   button:hover {
     background-color: #0056b3;
   }
+  #clickable-div {
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    position: relative;
+}
+#clickable-div img {
+    padding-top: 20px;
+    padding-left: 20px;
+    position: absolute;
+    display: none;
+    width: 250px; /* Set the width of the image */
+    height: 150px; /* Set the height of the image */
+    display: block; /* Ensure the image is displayed */
+}

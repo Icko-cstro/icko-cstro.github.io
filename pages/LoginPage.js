@@ -1,22 +1,21 @@
-// pages/LoginPage.js
-import { Header } from '../components/Header.js';
-import { Footer } from '../components/Footer.js';
-import { InputBox } from '../components/InputBox.js';
+import { InputForm } from '../components/InputForm.js';
+import { LoginLayout } from '../layouts/LoginLayout.js';
+import { ClickedMe } from '../components/ClickedMe.js';
 
-export function renderLoginPage(container) {
-  const header = Header();
-  const footer = Footer();
-  const inputBox = InputBox('Username', 'username');
-  const passwordBox = InputBox('Password', 'password');
+export function renderLoginPage() {
+    const fields = [
+        { label: 'Username', type: 'text', name: 'username' },
+        { label: 'Password', type: 'password', name: 'password' }
+    ];
 
-  container.appendChild(header);
-  const form = document.createElement('form');
-  form.appendChild(inputBox);
-  form.appendChild(passwordBox);
-  const submitButton = document.createElement('button');
-  submitButton.textContent = 'Login';
-  form.appendChild(submitButton);
-  container.appendChild(form);
-  container.appendChild(footer);
+    const formContainer = InputForm(fields); // Get the form container
+    const clickedMeComponent = ClickedMe(); // Create the ClickedMe component
+
+    // Create a container to hold both the form and the ClickedMe component
+    const container = document.createElement('div');
+    container.appendChild(formContainer);
+    container.appendChild(clickedMeComponent);
+
+    // Use the LoginLayout to wrap the container
+    return LoginLayout(container);
 }
-
