@@ -3,7 +3,7 @@
 export function ClickedMe() {
     const container = document.createElement('div');
     container.id = 'clickable-div';
-    container.textContent = 'Click me anywhere';
+    container.innerHTML = '<h1>Click me anywhere</h1>';
 
     container.addEventListener('click', function(event) {
         // Get all existing images
@@ -32,14 +32,14 @@ export function ClickedMe() {
                 left = divRect.width - imgRect.width; 
             }
 
-            // Adjust top position if the image goes beyond the bottom edge
+
             if (top + imgRect.height > divRect.height) {
-                top = divRect.height - imgRect.height; // Use the height from imgRect
+                top = divRect.height - imgRect.height;
             }
 
             img.style.left = `${left-10}px`;
             img.style.top = `${top-10}px`;
-            img.style.position = 'absolute'; // Ensure the image is positioned absolutely
+            img.style.position = 'absolute';
         };
     });
 

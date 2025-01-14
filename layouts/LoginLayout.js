@@ -6,8 +6,13 @@ export function LoginLayout(content) {
     const header = Header();
     const footer = Footer();
 
+    // Create a wrapper for the main content
+    const contentWrapper = document.createElement('div');
+    contentWrapper.className = 'main-container'; // Add a class for styling
+
+    contentWrapper.appendChild(content); // Append the content to the wrapper
     container.appendChild(header);
-    container.appendChild(content);
+    container.appendChild(contentWrapper); // Append the wrapper to the main container
     container.appendChild(footer);
 
     return container;
